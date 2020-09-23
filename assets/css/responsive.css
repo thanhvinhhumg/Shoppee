@@ -1,0 +1,127 @@
+/* mobile & tablet */
+
+@media(max-width: 1023px){
+    
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    .header__cart-list{
+        position: fixed;
+        top: var(--header-height) ;
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+    .header__cart-list::before {
+        display: none;
+    }
+    .app__container{
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .app__content{
+        padding-top: 8px;
+    }
+    .mobile__category{
+        display: block;
+    }
+    
+    
+    
+}
+
+/* tablet */
+@media (min-width:740px) and (max-width: 1023px){
+    :root{
+        --header-height: 68px;
+        --header-navbar: 0px;
+    }
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+    
+}
+
+/* mobile */
+ @media(max-width:739px){
+    :root{
+        --header-height: 56px;
+        --header-navbar: 0px;
+    }
+    .hide-on-moible{
+        display: none;
+    }
+    .header-with-search{
+        justify-content: space-between;
+    }
+    .header__logo, .header__cart{
+        width: unset;
+    }
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        left: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0,0,0, 0.05);
+        z-index: 12;
+        padding: 0 16px;
+        animation: mobilesearch linear 0.3s;
+        display: none;
+    }
+    @keyframes mobilesearch {
+        from{
+          top: calc( var(--header-height) / 2 );
+          opacity: 0;
+        }
+        to{
+            top: var(--header-height);
+            opacity: 1;
+        }
+    }
+    .header__search-history{
+        position: fixed;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        width: 100%;
+        left: 0;
+        box-shadow: 0 1px 2px 1px rgba(0,0,0, 0.1);
+    }
+    .pagination__item{
+        margin: 0;
+    }
+    .pagination__item-link{
+        font-size: 1.6rem;
+        min-width: 34px;
+    }
+    .app__content{
+        margin: 0 4px;
+    }
+    .header__logo-img{
+        width: 110px;
+    }
+    .footer__content{
+        padding: 0 16px;
+    }
+    .header__mobile-search{
+        display: block;
+    }
+    .header__cart{
+        padding-right: 12px;
+    }
+    .footer__download-app-link{
+        padding: 6px 8px;
+    }
+ }

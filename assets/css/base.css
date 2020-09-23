@@ -1,0 +1,215 @@
+:root{
+    --primary-color: #ee4d2d;
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --star-color: #ffce3e;
+    --header-height: 120px;
+    --header-navbar: 34px;
+    --header-with-search-height: calc(var(--header-height)- var(--header-navbar));
+    --header-sort-bar-height: 46px;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* responsive */
+body{
+    margin: 0;
+}
+
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes grow {
+    from{
+        transform: scale(var(--gorwth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+/* modal css */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadein linear 0.1s;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to: 1;
+    animation: grow linear 0.1s;
+    margin: auto;
+    z-index: 10;
+}
+/* btn style */
+.btn{
+    min-width: 124px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--while-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+.btn.btn-normal:hover{
+    background-color: rgba(0,0,0,0.04);
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+.btn-size-s{
+    height: 32px;
+    font-size: 12px;
+    padding: 0 10px;
+    
+}
+a{
+    text-decoration: none;
+    color: (var(--text-color));
+    display: block;
+}
+
+/* selection */
+
+.select__input{
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    background-color: var(--while-color);
+    border-radius: 2px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select__input-icon{
+    color: rgb(131,131,131);
+    font-size: 1.2rem;
+}
+.select__input-list{
+    position: absolute;
+    top: 78%;
+    right: 0;
+    background-color: var(--while-color);
+    border-radius: 2px;
+    width: 100%;
+    list-style: none;
+    padding: 10px 12px;
+    display: none;
+    z-index: 1;
+}
+.select__input-item-link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.select__input-item-link:hover{
+    color: var(--primary-color);
+}
+.select__input:hover .select__input-list{
+    display: block;
+}
+.select__input-list::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    top: -4px;
+    right: 0;
+}
+
+/* pagination */
+.pagination{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination__item{
+    margin: 0 12px;
+}
+
+.pagination__item-link{
+    --height: 30px;
+    font-size: 2rem;
+
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    display: block;
+    text-align: center;
+    align-items: center;
+    border-radius: 2px;
+}
+.pagination__item-active .pagination__item-link{
+    background-color: var(--primary-color);
+    color: var(--while-color);
+}
+
+.pagination__item-active .pagination__item-link:hover{
+    filter: brightness(90%);
+}
